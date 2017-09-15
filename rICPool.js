@@ -5,7 +5,8 @@ const timeout = 5000 // ms
 let isStarted = false
 
 const doJob = deadline => {
-  while (deadline.timeRemaining() > 5 && isStarted) { // you should at least have 5ms to do something :p
+  // you should at least have 5ms to do something :p
+  while (deadline.timeRemaining() > 5 && isStarted) { 
     const job = priorityJobs.length ? priorityJobs.pop() : jobs.pop()
     job(deadline, addInCompleteJobs)
   }
